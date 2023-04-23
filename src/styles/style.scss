@@ -1,0 +1,68 @@
+@use "variables/colors";
+@use "variables/fonts";
+
+body {
+    background-color: colors.$background-color;
+    color: colors.$font-color;
+    font-family: fonts.$font-family;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 74px 158px 70px 158px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 60px 150px 40px 150px;
+}
+
+nav {
+    display: flex;
+    gap: 1.5em;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+.main__side-description {
+    transform: rotate(-90deg);
+    left: -35px;
+    top: 50%;
+    position: fixed;
+}
+
+main {
+    padding: 0px 65px;
+}
+
+.footer__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'item1 item1 item1 item2 item2 item4 item4'
+        'item1 item1 item1 item3 item3 item5 item5';
+    gap: 1em;
+}
+
+.grid-item-1 { grid-area: item1;}
+.grid-item-2 { grid-area: item2;}
+.grid-item-3 { grid-area: item3;}
+.grid-item-4 { grid-area: item4;}
+.grid-item-5 { grid-area: item5;}
+
+.grid-item {
+    background-color: green;
+    border-radius: 1em;
+    padding: 1em;
+}

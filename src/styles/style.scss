@@ -5,13 +5,14 @@ body {
     background-color: colors.$background-color;
     color: colors.$font-color;
     font-family: fonts.$font-family;
+    font-weight: bold;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 74px 158px 70px 158px;
+    padding: 35px 150px 70px 150px;
 }
 
 footer {
@@ -32,7 +33,7 @@ h1 {
 
 .main__side-description {
     transform: rotate(-90deg);
-    left: -35px;
+    left: -70px;
     top: 50%;
     position: fixed;
 }
@@ -47,12 +48,22 @@ main {
     justify-content: space-between;
 }
 
+.footer__navigation__pages {
+    font-size: fonts.$font-small;
+}
+
+.footer__copyright {
+    font-size: fonts.$font-xs;
+    color: colors.$font-color-faded;
+}
+
 .grid-container {
     display: grid;
     grid-template-areas: 
         'item1 item1 item1 item2 item2 item4 item4'
         'item1 item1 item1 item3 item3 item5 item5';
     gap: 1em;
+    height: 436px;
 }
 
 .grid-item-1 { grid-area: item1;}
@@ -65,4 +76,16 @@ main {
     background-color: green;
     border-radius: 1em;
     padding: 1em;
+}
+
+.logo {
+    width: 130px;
+}
+
+.card-moving {
+    transition: transform ease 200ms;
+}
+
+.card-moving:hover {
+    transform: translate(0, -3px);
 }

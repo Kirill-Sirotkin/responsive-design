@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Responsive design!</title>
 </head>
 <body>
     <header>
-        <h1>
-            Maido
-        </h1>
+        <img class="logo" src="https://maido-dark.fueko.net/content/images/2020/06/maido.svg" alt="Maido logo" />
         <nav>
             <a>Home</a>
             <a>Features</a>
@@ -20,24 +19,24 @@
             <a>Newsletter</a>
             <a>Demos</a>
             <a>Get Theme</a>
-            <i>icon</i>
+            <i class="fa fa-search"></i>
         </nav>
     </header>
     <main>
-        <div class="main__side-description">Global description</div>
+        <div class="main__side-description">Thoughts, stories and ideas</div>
         <section>
             <div class="grid-container">
-                <div class="grid-item grid-item-1">item 1</div>
-                <div class="grid-item grid-item-2">item 2</div>
-                <div class="grid-item grid-item-3">item 3</div>
-                <div class="grid-item grid-item-4">item 4</div>
-                <div class="grid-item grid-item-5">item 5</div>
+                <div class="grid-item grid-item-1 card-moving">item 1</div>
+                <div class="grid-item grid-item-2 card-moving">item 2</div>
+                <div class="grid-item grid-item-3 card-moving">item 3</div>
+                <div class="grid-item grid-item-4 card-moving">item 4</div>
+                <div class="grid-item grid-item-5 card-moving">item 5</div>
             </div>
         </section>
     </main>
     <footer>
         <div class="footer__navigation">
-            <nav>
+            <nav class="footer__navigation__pages">
                 <a>Home</a>
                 <a>Features</a>
                 <a>Style Guide</a>
@@ -47,13 +46,13 @@
                 <a>Get Theme</a>
             </nav>
             <nav>
-                <a>Twitter</a>
-                <a>Instagram</a>
-                <a>Third link</a>
-                <a>Fourth link</a>
+                <a class="fa fa-twitter fa-lg"></a>
+                <a class="fa fa-instagram fa-lg"></a>
+                <a class="fa fa-github fa-lg"></a>
+                <a class="fa fa-vimeo fa-lg"></a>
             </nav>
         </div>
-        <div>Copyright message</div>
+        <div class="footer__copyright">MAIDO © 2023. ALL RIGHT RESERVED. PUBLISHED WITH GHOST & MAIDO.</div>
     </footer>
 </body>
 </html>

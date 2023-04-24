@@ -2,13 +2,14 @@ body {
   background-color: #252530;
   color: #ebebeb;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 74px 158px 70px 158px;
+  padding: 35px 150px 70px 150px;
 }
 
 footer {
@@ -29,7 +30,7 @@ h1 {
 
 .main__side-description {
   transform: rotate(-90deg);
-  left: -35px;
+  left: -70px;
   top: 50%;
   position: fixed;
 }
@@ -44,10 +45,20 @@ main {
   justify-content: space-between;
 }
 
+.footer__navigation__pages {
+  font-size: 0.8em;
+}
+
+.footer__copyright {
+  font-size: 0.7em;
+  color: rgba(235, 235, 235, 0.5411764706);
+}
+
 .grid-container {
   display: grid;
   grid-template-areas: "item1 item1 item1 item2 item2 item4 item4" "item1 item1 item1 item3 item3 item5 item5";
   gap: 1em;
+  height: 436px;
 }
 
 .grid-item-1 {
@@ -74,6 +85,18 @@ main {
   background-color: green;
   border-radius: 1em;
   padding: 1em;
+}
+
+.logo {
+  width: 130px;
+}
+
+.card-moving {
+  transition: transform ease 200ms;
+}
+
+.card-moving:hover {
+  transform: translate(0, -3px);
 }
 
 /*# sourceMappingURL=style.css.map */

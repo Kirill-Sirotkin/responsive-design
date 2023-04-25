@@ -64,6 +64,7 @@ main {
         'item1 item1 item1 item3 item3 item5 item5';
     gap: 1em;
     height: 436px;
+    grid-auto-columns: 1fr;
 }
 
 .grid-item-1 { grid-area: item1;}
@@ -80,6 +81,28 @@ main {
 
 .logo {
     width: 130px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 2em;
+    gap: 1em;
+    background-size: cover;
+}
+
+.card__author {
+    font-size: fonts.$font-xs;
+    text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black, 0 0 5px black;
+}
+
+.card__title {
+    font-size: fonts.$font-xl;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black, 0 0 5px black;
 }
 
 .card-moving {

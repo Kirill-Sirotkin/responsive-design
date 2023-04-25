@@ -1,5 +1,8 @@
-@use "../variables/colors";
-@use "../variables/fonts";
+@use "../variables/colors" as colors;
+@use "../variables/fonts" as fonts;
+
+@use "../extends/card-extend" as card_extend;
+@import "../mixins/card-mixin";
 
 main {
     padding: 0px 65px;
@@ -20,6 +23,7 @@ main {
     gap: 1em;
     height: 436px;
     grid-auto-columns: 1fr;
+    position: relative;
 }
 
 .grid-item-1 { grid-area: item1;}
@@ -28,10 +32,33 @@ main {
 .grid-item-4 { grid-area: item4;}
 .grid-item-5 { grid-area: item5;}
 
+.grid-container-1 {
+    display: grid;
+    grid-template-areas: 
+        'item1_1'
+        'item1_2'
+        'item1_3';
+    gap: 2em;
+    grid-auto-columns: 1fr;
+    padding: 3.5em 5em;
+    position: relative;
+}
+
+.grid-1-item-1 { grid-area: item1_1;}
+.grid-1-item-2 { grid-area: item1_2;}
+.grid-1-item-3 { grid-area: item1_3;}
+
 .grid-item {
-    background-color: green;
     border-radius: 1em;
     padding: 1em;
+}
+
+.card-container {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 1em;
+    position: relative;
 }
 
 .card {
@@ -41,19 +68,44 @@ main {
     padding: 2em;
     gap: 1em;
     background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-container__info-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    z-index: 1;
+    top: 160px;
+    left: 160px;
 }
 
 .card__author {
-    font-size: fonts.$font-xs;
-    text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black, 0 0 5px black;
+    @extend .card-text-shadow;
+    @include card-text(fonts.$font-xs);
 }
 
 .card__title {
-    font-size: fonts.$font-xl;
+    @extend .card-text-shadow;
+    @include card-text(fonts.$font-xl);
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black, 0 0 5px black;
+}
+
+.card__author-large {
+    @extend .card-text-shadow;
+    @include card-text(fonts.$font-medium);
+}
+
+.card__title-large {
+    @extend .card-text-shadow;
+    @include card-text(fonts.$font-xxl);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .card-moving {
@@ -62,4 +114,14 @@ main {
 
 .card-moving:hover {
     transform: translate(0, -3px);
+}
+
+.card-zooming {
+    width: 100%;
+    height: 100%;
+    transition: transform ease 300ms;
+}
+
+.card-zooming:hover {
+    transform: scale(1.02);
 }

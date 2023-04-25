@@ -1,0 +1,51 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 60px 150px 40px 150px;
+}
+
+.footer__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__navigation__pages {
+    font-size: fonts.$font-small;
+    & a {
+      text-decoration: none;
+      color: colors.$font-color;
+      margin-right: 1em;
+      &:hover::after {
+        content: "";
+        height: 0.3em;
+        width: 0.3em;
+        border-radius: 50%;
+        background-color: colors.$nonactive-link-color;
+        position: absolute;
+      }
+    }
+    & a:first-child {
+      &::after {
+        content: "";
+        height: 0.3em;
+        width: 0.3em;
+        border-radius: 50%;
+        background-color: colors.$active-link-color;
+        position: absolute;
+      }
+    }
+}
+
+.footer__copyright {
+    font-size: fonts.$font-xs;
+    color: colors.$font-color-faded;
+}
+
+.fa {
+  cursor: pointer;
+}

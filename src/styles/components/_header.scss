@@ -1,0 +1,38 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 150px 70px 150px;
+    & nav {
+      & a {
+        text-decoration: none;
+        color: colors.$font-color;
+        margin-right: 1em;
+        &:hover::after {
+          content: "";
+          height: 0.35em;
+          width: 0.35em;
+          border-radius: 50%;
+          background-color: colors.$nonactive-link-color;
+          position: absolute;
+        }
+      }
+      & a:first-child {
+        &::after {
+          content: "";
+          height: 0.35em;
+          width: 0.35em;
+          border-radius: 50%;
+          background-color: colors.$active-link-color;
+          position: absolute;
+        }
+      }
+    }
+}
+
+.header__logo {
+    width: 130px;
+}
